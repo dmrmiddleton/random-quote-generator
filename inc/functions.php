@@ -15,10 +15,8 @@ $quotes = [
 
 // A function to select and return a random quote from the multidimensional array $quotes.
 function getRandomQuote($array) {
-    // Determine length of array to use when selecting random quote, allows for quotes to be easily added or removed.
-    $array_len = count($array) - 1;
-    // Generate a random number between 0 and 6 to use for selecting an element of $array.
-    $index = rand(0,$array_len);
+    // Select a random key from $array and store in a variable.
+    $index = array_rand($array);
     // Select quote and store in a variable.
     $rand_quote = $array[$index];
     // return the selected quote
