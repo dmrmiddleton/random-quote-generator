@@ -10,7 +10,7 @@ $quotes = [
           ["quote" => "The way to get started is to quit talking and begin doing.", "source" => "Walt Disney"],
           ["quote" => "Every strike brings me closer to the next home run.", "source" => "Babe Ruth", "citation" => "Weird Ideas That Work", "year" => "2001"],
           ["quote" => "You will face many defeats in life, but never let yourself be defeated.", "source" => "Maya Angelou"],
-          ["quote" => "TThe future belongs to those who believe in the beauty of their dreams.", "source" => "Eleanor Roosevelt"],
+          ["quote" => "The future belongs to those who believe in the beauty of their dreams.", "source" => "Eleanor Roosevelt"],
           ];
 
 // A function to select and return a random quote from the multidimensional array $quotes.
