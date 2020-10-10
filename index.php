@@ -9,16 +9,17 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<!-- functions.php included in file -->
+<?php include 'inc/functions.php'; ?>
+<!-- EXTRA CREDIT - Random background color included inline -->
+<body <?php rand_background($colors); ?> >
   <div class="container">
     <div id="quote-box">
-      <!-- functions.php included and the printQuote function called. -->
-      <?php 
-        include 'inc/functions.php';
-        printQuote($quotes);
-      ?>
+      <!-- printQuote function called to randomly select quote -->
+      <?php printQuote($quotes);?>
     </div>
-    <button id="loadQuote" onclick="window.location.reload(true)" >Show another quote</button>
+    <button id="loadQuote" onclick="window.location.reload(true)">Show another quote</button>
   </div>
 </body>
 </html>
+

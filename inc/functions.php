@@ -52,4 +52,21 @@ function printQuote($array) {
     echo $quote_html;
 }
 
+// EXTRA CREDIT - Change background color each time the page reloads.
+
+// Create array of colors defined as hex values.
+$colors = ["#ffb3ba", "#F39C12", "#797D7F", "#2980B9", "#bae1ff"];
+
+// Create a function to randomly select a color and output the required string to include in the HTML.
+function rand_background($array) {
+    // Select a random key from $array and store in a variable.
+    $index = array_rand($array);
+     // Select color and store in a variable.
+     $rand_color = $array[$index];
+    // Build string to include in HTML.
+    $html_code = "style=\"background-color: $rand_color;";
+    // Include string in HTML.
+    echo $html_code;
+}
+
 ?>
