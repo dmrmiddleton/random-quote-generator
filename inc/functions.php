@@ -15,8 +15,15 @@ $quotes = [
           ];
 
 
-// Create the getRandomQuuote function and name it getRandomQuote
-
+// A function to select and return a random quote from the multidimensional array $quotes.
+function getRandomQuote($array) {
+    // Generate a random number between 0 and 6 to use for selecting an element of $array.
+    $index = rand(0,6);
+    // Select quote and store in a variable.
+    $rand_quote = $array[$index];
+    // return the selected quote
+    return $rand_quote;
+}
 
 
 // Create the printQuote funtion and name it printQuote
