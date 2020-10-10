@@ -1,6 +1,6 @@
-// PHP - Random Quote Generator
-//Create PHP open tag
 <?php
+// PHP - Random Quote Generator
+
 
 // Multidimensional array to store motivational quotes and associated information.
 // Each array within the multidimensional array contains a quote and source with optional elements for citation and year.
@@ -14,18 +14,47 @@ $quotes = [
           ["quote" => "TThe future belongs to those who believe in the beauty of their dreams.", "source" => "Eleanor Roosevelt"],
           ];
 
-
 // A function to select and return a random quote from the multidimensional array $quotes.
 function getRandomQuote($array) {
+    // Determine length of array to use when selecting random quote, allows for quotes to be easily added or removed.
+    $array_len = count($array) - 1;
     // Generate a random number between 0 and 6 to use for selecting an element of $array.
-    $index = rand(0,6);
+    $index = rand(0,$array_len);
     // Select quote and store in a variable.
     $rand_quote = $array[$index];
     // return the selected quote
     return $rand_quote;
 }
 
+// A function to create the HTML string for displaying randomly selected quote, passed in as an array.
+function printQuote($array) {
+    // Call getRandomQuote function to return the array of a random quote.
+    $rand_quote = getRandomQuote($array);
 
-// Create the printQuote funtion and name it printQuote
+    // Create variable to store HTML of selected quote.
+    $quote_html = "";
+
+    // Add quote and source HTML to the HTML string.
+    $quote_html .= "<p class=\"quote\">".$rand_quote["quote"]."</p>
+                   <p class=\"source\">".$rand_quote["source"];
+
+    // Check if selected quote has a citation and if so add it to the HTML string.
+    if ($rand_quote["citation"]) {
+        $quote_html .= "<span class=\"citation\">".$rand_quote["citation"]."</span>";
+    }
+
+    // Check if selected quote has a year and if so add it to the HTML string.
+    if ($rand_quote["year"]) {
+        $quote_html .= "<span class=\"citation\">".$rand_quote["year"]."</span>";
+    }
+
+    // Concatenate closing paragraph tag to the HTML string.
+    $quote_html .= "</p";
+
+    // Display the completed HTML string.
+    echo $quote_html;
+}
+
+printQuote($quotes);
 
 ?>
