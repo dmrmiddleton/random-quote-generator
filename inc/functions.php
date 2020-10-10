@@ -1,7 +1,6 @@
 <?php
 // PHP - Random Quote Generator
 
-
 // Multidimensional array to store motivational quotes and associated information.
 // Each array within the multidimensional array contains a quote and source with optional elements for citation and year.
 $quotes = [
@@ -49,12 +48,10 @@ function printQuote($array) {
     }
 
     // Concatenate closing paragraph tag to the HTML string.
-    $quote_html .= "</p";
+    $quote_html .= "</p>";
 
     // Display the completed HTML string.
     echo $quote_html;
 }
-
-printQuote($quotes);
 
 ?>
